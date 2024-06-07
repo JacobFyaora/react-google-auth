@@ -19,7 +19,7 @@ function App() {
 	//* If we would like to use that google api script on a backend we could use that accessToken
 	// const accessToekn = gapi.auth.getToken().access_token;
 
-	const onSuccess = (data: GoogleLoginResponse) => {
+	const onSuccess = (data: GoogleLoginResponse | GoogleLoginResponseOffline) => {
 		if ("getBasicProfile" in data) {
 			const name = data.getBasicProfile().getName();
 			console.log(name);
